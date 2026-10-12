@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { FormSchema } from "../schemas/userForm.schema";
 import type { FormData } from "../types/userForm.types";
 import { defaultValues } from "../constants/defaultValues";
@@ -16,7 +16,9 @@ export default function UserForm() {
 
   return (
     <div>
-
+      <FormProvider {...methods}>
+        
+      </FormProvider>
     </div>
   );
 }
