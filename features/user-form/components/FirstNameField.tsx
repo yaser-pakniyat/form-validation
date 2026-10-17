@@ -14,6 +14,7 @@ export default function FirstNameField() {
         type="text"
         {...register("firstName")}
         placeholder="Enter Your First Name"
+        disabled={isSubmitting}
       />
       {errors.firstName?.message && <span>{errors.firstName.message}</span>}
     </div>
