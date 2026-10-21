@@ -15,6 +15,7 @@ export default function LastNameField() {
         {...register("lastName")}
         placeholder="Enter Your Last Name"
       />
+      {errors.lastName?.message && <span>{errors.lastName.message}</span>}
     </div>
   );
 }
