@@ -14,6 +14,7 @@ export default function LastNameField() {
         type="text"
         {...register("lastName")}
         placeholder="Enter Your Last Name"
+        disabled={isSubmitting}
       />
       {errors.lastName?.message && <span>{errors.lastName.message}</span>}
     </div>
