@@ -15,6 +15,7 @@ export default function PhoneField() {
         {...register("phone")}
         placeholder="0xxxxxxxxxx"
       />
+      {errors.phone?.message && <span>{errors.phone.message}</span>}
     </div>
   );
 }
