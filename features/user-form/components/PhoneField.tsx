@@ -14,6 +14,7 @@ export default function PhoneField() {
         type="tel"
         {...register("phone")}
         placeholder="0xxxxxxxxxx"
+        disabled={isSubmitting}
       />
       {errors.phone?.message && <span>{errors.phone.message}</span>}
     </div>
