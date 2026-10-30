@@ -12,13 +12,18 @@ export default function GenderField() {
         {/* male */}
         <legend>Gender</legend>
         <label htmlFor="male">
-          <input id="male" type="radio" value="male" />
+          <input id="male" type="radio" value="male" {...register("gender")} />
           Male
         </label>
 
         {/* female */}
         <label htmlFor="female">
-          <input id="female" type="radio" value="female" />
+          <input
+            id="female"
+            type="radio"
+            value="female"
+            {...register("gender")}
+          />
           Female
         </label>
       </fieldset>
