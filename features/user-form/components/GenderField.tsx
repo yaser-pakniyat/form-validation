@@ -27,6 +27,7 @@ export default function GenderField() {
           Female
         </label>
       </fieldset>
+      {errors.gender?.message && <span>{errors.gender.message}</span>}
     </div>
   );
 }
