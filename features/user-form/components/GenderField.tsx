@@ -12,7 +12,13 @@ export default function GenderField() {
         {/* male */}
         <legend>Gender</legend>
         <label htmlFor="male">
-          <input id="male" type="radio" value="male" {...register("gender")} />
+          <input
+            id="male"
+            type="radio"
+            value="male"
+            {...register("gender")}
+            disabled={isSubmitting}
+          />
           Male
         </label>
 
@@ -23,6 +29,7 @@ export default function GenderField() {
             type="radio"
             value="female"
             {...register("gender")}
+            disabled={isSubmitting}
           />
           Female
         </label>
