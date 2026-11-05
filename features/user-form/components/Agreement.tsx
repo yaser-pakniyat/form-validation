@@ -14,7 +14,7 @@ export default function Agreement() {
           I agree <Link href="/terms">Terms of Service</Link> and{" "}
           <Link href="/privacy">Privacy Policy</Link>
         </label>
-        <input id="agree" type="checkbox" />
+        <input id="agree" type="checkbox" {...register("agree")} />
       </div>
     </div>
   );
