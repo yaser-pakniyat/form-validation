@@ -21,6 +21,7 @@ export default function Agreement() {
           disabled={isSubmitting}
         />
       </div>
+      {errors.agree?.message && <span>{errors.agree.message}</span>}
     </div>
   );
 }
