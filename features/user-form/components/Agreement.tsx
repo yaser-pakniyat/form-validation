@@ -9,10 +9,16 @@ export default function Agreement() {
   } = useFormContext<FormData>();
   return (
     <div>
-      <div>
-        <label htmlFor="agree">
-          I agree <Link href="/terms">Terms of Service</Link> and{" "}
-          <Link href="/privacy">Privacy Policy</Link>
+      <div className="flex gap-x-1">
+        <label htmlFor="agree" className="text-xs">
+          I agree{" "}
+          <Link className="text-blue-600" href="/terms">
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link className="text-blue-600" href="/privacy">
+            Privacy Policy
+          </Link>
         </label>
         <input
           id="agree"
@@ -21,7 +27,9 @@ export default function Agreement() {
           disabled={isSubmitting}
         />
       </div>
-      {errors.agree?.message && <span>{errors.agree.message}</span>}
+      {errors.agree?.message && (
+        <span className="error -mt-6">{errors.agree.message}</span>
+      )}
     </div>
   );
 }
