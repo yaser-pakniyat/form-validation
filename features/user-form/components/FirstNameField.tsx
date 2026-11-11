@@ -1,5 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import type { FormData } from "../types/userForm.types";
+import styles from "./UserForm.module.css";
 
 export default function FirstNameField() {
   const {
@@ -7,16 +8,19 @@ export default function FirstNameField() {
     formState: { isSubmitting, errors },
   } = useFormContext<FormData>();
   return (
-    <div>
+    <div className={styles.inputWrapper}>
       <label htmlFor="firstName">First Name</label>
       <input
+        className={styles.input}
         id="firstName"
         type="text"
         {...register("firstName")}
         placeholder="Enter Your First Name"
         disabled={isSubmitting}
       />
-      {errors.firstName?.message && <span>{errors.firstName.message}</span>}
+      {errors.firstName?.message && (
+        <span className={styles.error}>{errors.firstName.message}</span>
+      )}
     </div>
   );
 }
