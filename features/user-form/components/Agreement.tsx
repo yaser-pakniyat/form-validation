@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useFormContext } from "react-hook-form";
 import { FormData } from "../types/userForm.types";
+import styles from "./UserForm.module.css";
 
 export default function Agreement() {
   const {
@@ -28,7 +29,7 @@ export default function Agreement() {
         />
       </div>
       {errors.agree?.message && (
-        <span className="error -mt-6">{errors.agree.message}</span>
+        <span className={`${styles.error} -mt-6`}>{errors.agree.message}</span>
       )}
     </div>
   );
