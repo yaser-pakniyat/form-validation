@@ -1,5 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import { FormData } from "../types/userForm.types";
+import styles from "./UserForm.module.css";
 
 export default function GenderField() {
   const {
@@ -7,8 +8,8 @@ export default function GenderField() {
     formState: { isSubmitting, errors },
   } = useFormContext<FormData>();
   return (
-    <div>
-      <fieldset>
+    <div className={styles.inputWrapper}>
+      <fieldset className="flex justify-evenly rounded-xl border border-gray-400 pb-2 focus-within:border-sky-400">
         {/* male */}
         <legend>Gender</legend>
         <label htmlFor="male">
@@ -17,6 +18,7 @@ export default function GenderField() {
             type="radio"
             value="male"
             {...register("gender")}
+            className="mr-1"
             disabled={isSubmitting}
           />
           Male
@@ -29,12 +31,17 @@ export default function GenderField() {
             type="radio"
             value="female"
             {...register("gender")}
+            className="mr-1"
             disabled={isSubmitting}
           />
           Female
         </label>
       </fieldset>
-      {errors.gender?.message && <span>{errors.gender.message}</span>}
+      <div>
+        {errors.gender?.message && (
+          <span className={styles.error}>{errors.gender.message}</span>
+        )}
+      </div>
     </div>
   );
 }
