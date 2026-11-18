@@ -6,7 +6,7 @@ export default function SubmitButton() {
   } = useFormContext<FormData>();
   return (
     <button type="submit">
-      Sign Up
+      {isSubmitting ? <span>Waiting</span> : <span>Sign Up</span>}
     </button>
   );
 }
