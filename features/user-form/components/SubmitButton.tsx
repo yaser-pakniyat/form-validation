@@ -5,7 +5,10 @@ export default function SubmitButton() {
     formState: { isSubmitting },
   } = useFormContext<FormData>();
   return (
-    <button type="submit">
+    <button
+      type="submit"
+      disabled={isSubmitting}
+    >
       {isSubmitting ? <span>Waiting</span> : <span>Sign Up</span>}
     </button>
   );
