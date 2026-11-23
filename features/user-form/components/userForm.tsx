@@ -25,7 +25,7 @@ export default function UserForm() {
   return (
     <div>
       <FormProvider {...methods}>
-        <form>
+        <form onSubmit={methods.handleSubmit(onValid, oninvalid)}>
           <FirstNameField />
           <LastNameField />
           <PhoneField />
