@@ -13,6 +13,7 @@ import {
   SubmitButton,
 } from "./index";
 import { defaultValues } from "../constants/defaultValues";
+import styles from "./UserForm.module.css";
 
 export default function UserForm() {
   const methods = useForm<FormData>({
@@ -23,9 +24,12 @@ export default function UserForm() {
   });
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onValid, oninvalid)}>
+        <form
+          className={styles.form}
+          onSubmit={methods.handleSubmit(onValid, oninvalid)}
+        >
           <FirstNameField />
           <LastNameField />
           <PhoneField />
