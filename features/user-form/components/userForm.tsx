@@ -23,6 +23,14 @@ export default function UserForm() {
     defaultValues: defaultValues,
   });
 
+  const onValid = async (data) => {
+    const response = await fetch("/api/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
       <FormProvider {...methods}>
