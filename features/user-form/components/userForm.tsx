@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { FormSchema } from "../schemas/userForm.schema";
 import type { FormData } from "../types/userForm.types";
 import {
@@ -23,7 +23,7 @@ export default function UserForm() {
     defaultValues: defaultValues,
   });
 
-  const onValid = async (data) => {
+  const onValid: SubmitHandler<FormData> = async (data) => {
     const response = await fetch("/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
